@@ -337,6 +337,59 @@ section{position:relative;z-index:1}
 .pk.hot .pkbtn{background:var(--grad);color:#0a0a0b;border-color:transparent;box-shadow:0 10px 30px -12px rgba(255,120,0,.75)}
 @media(max-width:980px){.pk-grid{grid-template-columns:1fr;max-width:460px;margin-left:auto;margin-right:auto}.pk.hot{order:-1}.pk .pkdesc{min-height:0}}
 
+/* single plan */
+.plan{margin-top:50px;display:grid;grid-template-columns:.85fr 1.15fr;border-radius:28px;overflow:hidden;position:relative;
+  background:var(--surface);box-shadow:0 40px 100px -50px rgba(255,100,0,.45)}
+.plan::before{content:"";position:absolute;inset:0;border-radius:28px;padding:1px;background:var(--grad);
+  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none;z-index:2}
+.plan-side{position:relative;padding:clamp(28px,4vw,48px);background:linear-gradient(160deg,#241a0e 0%,#151517 70%);display:flex;flex-direction:column;overflow:hidden}
+.plan-side::after{content:"";position:absolute;width:360px;height:360px;border-radius:50%;background:#ff6a00;filter:blur(110px);opacity:.22;right:-160px;top:-140px;pointer-events:none}
+.flag-in{align-self:flex-start;background:var(--grad);color:#0a0a0b;font-size:10.5px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;padding:7px 14px;border-radius:100px;margin-bottom:26px;position:relative;z-index:1}
+.plan .tier{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--txt-mut);font-weight:700;margin-bottom:10px}
+.plan-name{font-family:"LTWave",sans-serif;font-size:clamp(2rem,3.6vw,2.8rem);line-height:1;margin-bottom:16px}
+.plan-desc{font-size:14.5px;color:var(--txt-mut);margin-bottom:28px;max-width:34ch}
+.plan-price{display:flex;align-items:baseline;gap:8px}
+.plan-price .cur{font-size:18px;color:var(--txt-mut);font-weight:600}
+.plan-price .val{font-family:"LTWave",sans-serif;font-size:clamp(3.6rem,7vw,5rem);line-height:1;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.plan-pay{font-size:13.5px;color:var(--txt-mut);margin-top:8px}
+.plan-pay b{color:var(--amber);font-weight:600}
+.plan-meta{display:grid;gap:10px;margin:28px 0 30px;padding-top:24px;border-top:1px solid var(--line)}
+.plan-meta div{display:flex;align-items:center;gap:10px;font-size:13px;color:var(--txt)}
+.plan-meta svg{width:17px;height:17px;stroke:var(--amber);flex:none}
+.plan-btn{margin-top:auto;justify-content:center;position:relative;z-index:1}
+.plan-body{padding:clamp(28px,4vw,48px);display:grid;gap:30px;align-content:start}
+.pg-head{display:flex;align-items:center;gap:14px;margin-bottom:14px}
+.pg-n{font-family:"LTWave",sans-serif;font-size:1rem;width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;border:1px solid var(--line-2);color:var(--amber);flex:none}
+.pg-head h4{font-family:"LTWave",sans-serif;font-weight:500;font-size:clamp(1.25rem,2vw,1.5rem)}
+.pgroup ul{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:10px 22px;padding-left:52px}
+.pgroup li{display:flex;gap:10px;font-size:14px;line-height:1.45;color:var(--txt)}
+.pgroup li svg{width:16px;height:16px;flex:none;margin-top:2px;stroke:var(--amber)}
+.pgroup li:last-child:nth-child(odd),.pgroup li.wide{grid-column:1/-1}
+.opts{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-top:10px}
+.opts em{font-style:normal;font-size:12.5px;font-weight:600;border:1px solid rgba(255,150,0,.4);background:rgba(255,150,0,.08);color:var(--txt);padding:5px 12px;border-radius:100px}
+.opts i{font-style:normal;font-size:12px;color:var(--txt-dim)}
+.pnote{display:flex;gap:14px;align-items:flex-start;background:var(--ink);border:1px solid var(--line);border-radius:18px;padding:20px 22px}
+.pnote>svg{width:22px;height:22px;flex:none;stroke:var(--amber);margin-top:1px}
+.pnote b{display:block;font-size:14px;margin-bottom:6px}
+.pnote p{font-size:13.5px;color:var(--txt-mut);line-height:1.6}
+.pnote strong{color:var(--txt);font-weight:600}
+@media(max-width:960px){.plan{grid-template-columns:1fr}}
+@media(max-width:600px){.pgroup ul{grid-template-columns:1fr;padding-left:0}.pgroup li:last-child:nth-child(odd),.pgroup li.wide{grid-column:auto}}
+
+/* collab */
+.collab-head{max-width:760px}
+.collab-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:40px}
+.cb{background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:28px 26px;position:relative;overflow:hidden;transition:transform .4s var(--ease),border-color .4s}
+.cb:hover{transform:translateY(-6px);border-color:rgba(255,150,0,.45)}
+.cb-n{font-family:"LTWave",sans-serif;font-size:2.4rem;line-height:1;margin-bottom:22px;color:transparent;-webkit-text-stroke:1px var(--amber)}
+.cb h5{font-size:16px;font-weight:700;margin-bottom:8px}
+.cb p{font-size:13.8px;color:var(--txt-mut);line-height:1.6}
+.collab-note{margin-top:22px;display:flex;gap:12px;align-items:flex-start;font-size:13.5px;color:var(--txt-mut);line-height:1.6;max-width:820px}
+.collab-note strong{color:var(--txt);font-weight:600}
+.collab-note svg{width:18px;height:18px;flex:none;stroke:var(--amber);margin-top:2px}
+@media(max-width:900px){.collab-grid{grid-template-columns:1fr}}
+.pay-grid.one{grid-template-columns:1fr;max-width:460px;margin-left:auto;margin-right:auto}
+
 /* compare */
 .compare{margin-top:40px;border:1px solid var(--line);border-radius:20px;background:var(--surface);overflow:hidden}
 .compare summary{list-style:none;cursor:pointer;padding:20px 24px;display:flex;justify-content:space-between;align-items:center;font-weight:700;font-size:15px}
@@ -541,17 +594,17 @@ footer{background:var(--ink);border-top:1px solid var(--line);padding:56px 0 34p
     </div>
 
     <div class="scope">
-      <h3 class="rv">Os itens que você marcou no briefing.<small>Todos estão contemplados nos planos abaixo, distribuídos de forma equilibrada para você escolher o nível de entrega ideal para este momento.</small></h3>
+      <h3 class="rv">O que definimos juntas para o seu projeto.<small>Depois das nossas conversas, montei um pacote sob medida: um pouco de cada frente, exatamente com o que você precisa para começar com uma marca completa e pronta para uso.</small></h3>
       <div>
         <div class="scope-list">
-          <div class="sc rv"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M4 7V4h16v3M9 20h6M12 4v16"/></svg>Naming e assinatura</div>
+          <div class="sc rv"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M12 3l7 3v6c0 4-3 7-7 8-4-1-7-4-7-8V6z"/></svg>Identidade visual</div>
           <div class="sc rv"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><rect x="3" y="6" width="18" height="12" rx="2"/><path d="M7 10h6M7 14h4"/></svg>Cartão de visita</div>
-          <div class="sc rv"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/></svg>Cartão de visita digital</div>
           <div class="sc rv"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>Assinatura de e-mail</div>
           <div class="sc rv"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6M8 13h8M8 17h5"/></svg>Papel timbrado</div>
           <div class="sc rv"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M3 7a2 2 0 012-2h4l2 2h8a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg>Pasta A4</div>
-          <div class="sc rv"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".6" fill="currentColor"/></svg>Posts para Instagram</div>
-          <div class="sc rv"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M10 9l5 3-5 3z"/></svg>Motion</div>
+          <div class="sc rv"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".6" fill="currentColor"/></svg>Estrutura para Instagram</div>
+          <div class="sc rv"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 15l5-5 4 4 3-3 6 6"/></svg>Modelos de posts</div>
+          <div class="sc rv"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M21 8l-9-5-9 5 9 5 9-5z"/><path d="M3 13l9 5 9-5"/></svg>Brand Pack completo</div>
         </div>
         <div class="insta-note rv"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/></svg>
           <span>Você comentou que o Instagram do escritório <b>ainda vai nascer</b>. Isso é uma vantagem: ele já começa com a marca certa, um visual coerente desde o primeiro post.</span></div>
@@ -609,7 +662,7 @@ footer{background:var(--ink);border-top:1px solid var(--line);padding:56px 0 34p
       <div class="pstep rv"><div class="ring">01</div><h5>Imersão</h5><p>Estudo do seu briefing, da sua atuação e do cenário da advocacia em Esplanada e região.</p><ul><li>Briefing</li><li>Pesquisa</li><li>Alinhamento</li></ul></div>
       <div class="pstep rv"><div class="ring">02</div><h5>Estratégia</h5><p>Definição de atributos, público, personalidade e do equilíbrio entre autoridade e delicadeza.</p><ul><li>Atributos</li><li>Público</li><li>Concorrência</li><li>DNA da marca</li></ul></div>
       <div class="pstep rv"><div class="ring">03</div><h5>Ideação</h5><p>Referências e moodboard para validar juntos a direção visual antes de qualquer desenho final.</p><ul><li>Referências</li><li>Moodboard</li><li>Direção visual</li></ul></div>
-      <div class="pstep rv"><div class="ring">04</div><h5>Implementação</h5><p>Criação da marca e de todo o sistema visual, aplicado nos materiais do seu plano.</p><ul><li>Logotipo</li><li>Sistema visual</li><li>Aplicações</li><li>Testes</li></ul></div>
+      <div class="pstep rv"><div class="ring">04</div><h5>Implementação</h5><p>Criação da marca e de todo o sistema visual, aplicado nos materiais do seu pacote.</p><ul><li>Logotipo</li><li>Sistema visual</li><li>Aplicações</li><li>Testes</li></ul></div>
       <div class="pstep rv"><div class="ring">05</div><h5>Entrega</h5><p>Apresentação do projeto e entrega organizada de todos os arquivos, com orientações de uso.</p><ul><li>Apresentação</li><li>Arquivos finais</li><li>Alinhamento final</li></ul></div>
     </div>
   </div>
@@ -673,121 +726,83 @@ footer{background:var(--ink);border-top:1px solid var(--line);padding:56px 0 34p
   </div>
 </section>
 
-<!-- PACOTES -->
+<!-- PLANO PERSONALIZADO -->
 <section id="pacotes" class="pad">
   <div class="wrap">
     <div class="eyebrow rv"><span class="dot"></span>Investimento</div>
-    <h2 class="stitle display split" data-split>Três caminhos para a sua marca.</h2>
-    <p class="lead rv">Escolha o nível de entrega que faz mais sentido para este momento do seu escritório.</p>
+    <h2 class="stitle display split" data-split>Um plano feito sob medida para você.</h2>
+    <p class="lead rv">A partir do que conversamos, reuni em um único pacote <strong>a identidade visual, os materiais profissionais e a estrutura visual para o Instagram</strong>. Nada a mais, nada a menos do que você precisa para este momento do escritório.</p>
 
-    <div class="same-brand rv">
-      <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.2"><path d="M12 3l7 3v6c0 4-3 7-7 8-4-1-7-4-7-8V6z"/><path d="M9 12l2 2 4-4"/></svg></div>
-      <div>
-        <h4>A sua marca é a mesma em todos os planos.</h4>
-        <p>O processo, o cuidado e a qualidade da criação da identidade não mudam. O que muda de um plano para o outro é <strong style="color:var(--txt)">a quantidade de materiais que saem prontos para uso</strong>.</p>
+    <div class="plan rv-scale">
+      <div class="plan-side">
+        <div class="flag-in">Condição especial</div>
+        <div class="tier">Plano personalizado</div>
+        <div class="plan-name">Tainá Gonçalves<br><span class="g">Advocacia</span></div>
+        <p class="plan-desc">Identidade visual + aplicações profissionais + estrutura visual para Instagram.</p>
+        <div class="plan-price"><span class="cur">R$</span><span class="val">650</span></div>
+        <div class="plan-pay">no PIX, ou <b>4x de R$ 162,50</b> sem juros no cartão</div>
+        <div class="plan-meta">
+          <div><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Prazo · 20 dias úteis</div>
+          <div><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M4 4h16v16H4z"/><path d="M4 9h16M9 20V9"/></svg>3 alterações de baixo impacto inclusas</div>
+        </div>
+        <a href="https://wa.me/5575991079941?text=Ol%C3%A1%2C%20Maicon!%20Quero%20fechar%20o%20plano%20personalizado." target="_blank" rel="noopener" class="btn btn-primary mag plan-btn">Quero fechar este plano <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+      <div class="plan-body">
+        <div class="pgroup">
+          <div class="pg-head"><span class="pg-n">01</span><h4>Identidade visual</h4></div>
+          <ul>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.6"><path d="M20 6L9 17l-5-5"/></svg><span>Logotipo principal e variações</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.6"><path d="M20 6L9 17l-5-5"/></svg><span>Símbolo, paleta de cores e tipografia</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.6"><path d="M20 6L9 17l-5-5"/></svg><span>Elementos gráficos e diretrizes de aplicação</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.6"><path d="M20 6L9 17l-5-5"/></svg><span>Brand Pack com todos os arquivos finais</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.6"><path d="M20 6L9 17l-5-5"/></svg><span>Guia de uso da marca</span></li>
+          </ul>
+        </div>
+        <div class="pgroup">
+          <div class="pg-head"><span class="pg-n">02</span><h4>Materiais profissionais</h4></div>
+          <ul>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.6"><path d="M20 6L9 17l-5-5"/></svg><span>Cartão de visita digital e arquivo pronto para impressão</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.6"><path d="M20 6L9 17l-5-5"/></svg><span>Papel timbrado pronto para impressão</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.6"><path d="M20 6L9 17l-5-5"/></svg><span>Pasta A4 pronta para impressão</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.6"><path d="M20 6L9 17l-5-5"/></svg><span>Assinatura de e-mail profissional</span></li>
+          </ul>
+        </div>
+        <div class="pgroup">
+          <div class="pg-head"><span class="pg-n">03</span><h4>Estrutura visual para Instagram</h4></div>
+          <ul>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.6"><path d="M20 6L9 17l-5-5"/></svg><span>Foto de perfil</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.6"><path d="M20 6L9 17l-5-5"/></svg><span>Capas para os destaques</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.6"><path d="M20 6L9 17l-5-5"/></svg><span>Elementos gráficos de apoio</span></li>
+            <li class="wide"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.6"><path d="M20 6L9 17l-5-5"/></svg><span>3 modelos de posts editáveis, à sua escolha:
+              <span class="opts"><em>2 carrosséis + 1 estático</em><i>ou</i><em>1 carrossel + 2 estáticos</em></span></span></li>
+          </ul>
+        </div>
+        <div class="pnote">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16h.01"/></svg>
+          <div><b>Importante sobre a entrega</b>
+            <p>Os materiais de papelaria são entregues em <strong>arquivos digitais preparados para impressão</strong>, prontos para enviar à gráfica de sua preferência. Os posts são <strong>modelos editáveis e reutilizáveis</strong>, editáveis no Canva, para você trocar textos e imagens sempre que quiser. Não se trata de uma produção mensal de conteúdo.</p></div>
+        </div>
       </div>
     </div>
+  </div>
+</section>
 
-    <div class="pay-toggle rv" id="paytoggle" role="tablist">
-      <span class="pill"></span>
-      <button class="on" data-mode="parc" role="tab" aria-selected="true">Parcelado</button>
-      <button data-mode="vista" role="tab" aria-selected="false">À vista <span class="save">com desconto</span></button>
+<!-- PARCERIA -->
+<section id="parceria" class="pad" style="padding-top:0;background:var(--ink-2)">
+  <div class="wrap">
+    <div class="collab">
+      <div class="collab-head">
+        <span class="soc-badge rv">Um convite à parte</span>
+        <h2 class="stitle display split" data-split>Parceria de <span class="g">divulgação.</span></h2>
+        <p class="lead rv">Além do projeto, gostaria de te convidar para uma colaboração. A ideia é aproveitar a sua experiência construindo a marca para apresentar o projeto ao público, mostrando não só o resultado visual, mas o processo de criar uma identidade profissional desde o início da carreira.</p>
+      </div>
+      <div class="collab-grid">
+        <div class="cb rv"><div class="cb-n">01</div><h5>Vídeo de feedback</h5><p>Com o projeto concluído, você grava um depoimento contando como foi a experiência, como aconteceu a construção da marca e o que achou do resultado.</p></div>
+        <div class="cb rv"><div class="cb-n">02</div><h5>Publicação em collab</h5><p>Conteúdos em colaboração para apresentar a nova identidade, mostrar o resultado e contar um pouco da história por trás da marca.</p></div>
+        <div class="cb rv"><div class="cb-n">03</div><h5>Projeto no portfólio</h5><p>Com a sua autorização, a identidade desenvolvida pode ser apresentada no portfólio e nas redes sociais da equipe.</p></div>
+      </div>
+      <p class="collab-note rv"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><span>Este convite é <strong>independente do pacote e do valor acima</strong>. Os conteúdos e o uso da sua imagem são combinados previamente entre nós, sempre de forma leve e dentro das regras de publicidade da OAB.</span></p>
     </div>
-
-    <div class="pk-grid">
-      <!-- ESSENCIAL -->
-      <div class="pk rv">
-        <div class="tier">Plano 01</div>
-        <div class="pkname">Essencial</div>
-        <div class="pkdesc">A marca completa e os itens básicos de apresentação, prontos para você começar com o pé direito.</div>
-        <div class="was"></div>
-        <div class="price"><span class="cur">R$</span><span class="val" data-parc="550" data-vista="520">550</span></div>
-        <div class="payline" data-parc="ou <b>4x de R$ 137,50</b> sem juros no cartão" data-vista="no PIX, <b>economia de R$ 30</b>">ou <b>4x de R$ 137,50</b> sem juros no cartão</div>
-        <div class="prazo"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Prazo · 12 dias úteis</div>
-        <ul>
-          <li class="base"><svg viewBox="0 0 24 24" fill="none" stroke="#ffb600" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg><span>Identidade visual completa: logotipo, variações, símbolo, paleta, tipografia e grafismos</span></li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="#ffb600" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg><span>Naming e assinatura: estudo da melhor forma de apresentar o nome do escritório, dentro das normas da OAB</span></li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="#ffb600" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg><span>Cartão de visita: modelo pronto para impressão + versão digital</span></li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="#ffb600" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg><span>Assinatura de e-mail profissional</span></li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="#ffb600" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg><span>Brand Pack: todos os arquivos finais em RGB e CMYK (.ai .eps .pdf .png .svg)</span></li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="#ffb600" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg><span>Guia rápido de uso da marca</span></li>
-        </ul>
-        <a href="https://wa.me/5575991079941?text=Ol%C3%A1%2C%20Maicon!%20Quero%20seguir%20com%20o%20plano%20Essencial." target="_blank" rel="noopener" class="pkbtn">Quero o Essencial</a>
-      </div>
-
-      <!-- PROFISSIONAL -->
-      <div class="pk hot rv">
-        <div class="flag">Mais indicado para você</div>
-        <div class="tier">Plano 02</div>
-        <div class="pkname">Profissional</div>
-        <div class="pkdesc">Contempla todos os materiais impressos que você marcou no briefing, mais a base para lançar o Instagram do escritório.</div>
-        <div class="was"></div>
-        <div class="price"><span class="cur">R$</span><span class="val" data-parc="900" data-vista="850">900</span></div>
-        <div class="payline" data-parc="ou <b>4x de R$ 225</b> sem juros no cartão" data-vista="no PIX, <b>economia de R$ 50</b>">ou <b>4x de R$ 225</b> sem juros no cartão</div>
-        <div class="prazo"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Prazo · 20 dias úteis</div>
-        <ul>
-          <li class="base"><svg viewBox="0 0 24 24" fill="none" stroke="#ffb600" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg><span>Tudo do plano Essencial</span></li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="#ffb600" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg><span>Papel timbrado e pasta A4: arquivos prontos para a gráfica</span></li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="#ffb600" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg><span>Modelos de posts para Instagram, editáveis, com a identidade aplicada ao feed</span></li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="#ffb600" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg><span>Kit visual de Instagram: foto de perfil, capas de destaques e elementos de apoio</span></li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="#ffb600" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg><span>Iconografia personalizada, uma linguagem de ícones exclusiva da marca</span></li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="#ffb600" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg><span>Banco de imagens com IA para posts, apresentações e comunicação</span></li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="#ffb600" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg><span>Aplicações digitais: wallpapers para celular e computador</span></li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="#ffb600" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg><span>Manual da marca com as diretrizes de uso</span></li>
-        </ul>
-        <a href="https://wa.me/5575991079941?text=Ol%C3%A1%2C%20Maicon!%20Quero%20seguir%20com%20o%20plano%20Profissional." target="_blank" rel="noopener" class="pkbtn">Quero o Profissional</a>
-      </div>
-
-      <!-- PREMIUM -->
-      <div class="pk rv">
-        <div class="tier">Plano 03</div>
-        <div class="pkname">Premium</div>
-        <div class="pkdesc">A experiência completa: a marca em movimento, em 3D e documentada a fundo para qualquer ponto de contato.</div>
-        <div class="was"><s>De R$ 1.300</s> <span class="off">Condição especial</span></div>
-        <div class="price"><span class="cur">por R$</span><span class="val" data-parc="1.200" data-vista="1.100">1.200</span></div>
-        <div class="payline" data-parc="ou <b>4x de R$ 300</b> sem juros no cartão" data-vista="no PIX, <b>economia de R$ 100</b>">ou <b>4x de R$ 300</b> sem juros no cartão</div>
-        <div class="prazo"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Prazo · 30 dias úteis</div>
-        <ul>
-          <li class="base"><svg viewBox="0 0 24 24" fill="none" stroke="#ffb600" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg><span>Tudo do plano Profissional</span></li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="#ffb600" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg><span>Motion: logotipo animado para vídeos, reels e apresentações</span></li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="#ffb600" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg><span>Aplicação da marca em 3D: mockups realistas para apresentações e redes</span></li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="#ffb600" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg><span>Aplicações ampliadas: envelope, bloco de notas, carimbo e outros materiais do dia a dia</span></li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="#ffb600" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg><span>Banco de imagens com IA ampliado, com mais contextos e situações</span></li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="#ffb600" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg><span>Iconografia estendida para todos os pontos de contato</span></li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="#ffb600" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg><span>Apresentação institucional sóbria para apresentar você e os serviços</span></li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="#ffb600" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg><span>Manual de marca completo, com regras e possibilidades de aplicação</span></li>
-        </ul>
-        <a href="https://wa.me/5575991079941?text=Ol%C3%A1%2C%20Maicon!%20Quero%20seguir%20com%20o%20plano%20Premium." target="_blank" rel="noopener" class="pkbtn">Quero o Premium</a>
-      </div>
-    </div>
-
-    <details class="compare rv">
-      <summary>Comparar os planos lado a lado <i><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4"><path d="M12 5v14M5 12h14"/></svg></i></summary>
-      <div class="cmp-scroll">
-        <table class="cmp">
-          <thead><tr><th></th><th>Essencial</th><th class="hot">Profissional</th><th>Premium</th></tr></thead>
-          <tbody>
-            <tr><td>Identidade visual completa</td><td class="y"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.6"><path d="M20 6L9 17l-5-5"/></svg></td><td class="y"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.6"><path d="M20 6L9 17l-5-5"/></svg></td><td class="y"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.6"><path d="M20 6L9 17l-5-5"/></svg></td></tr>
-            <tr><td>Naming e assinatura</td><td class="y"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.6"><path d="M20 6L9 17l-5-5"/></svg></td><td class="y"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.6"><path d="M20 6L9 17l-5-5"/></svg></td><td class="y"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.6"><path d="M20 6L9 17l-5-5"/></svg></td></tr>
-            <tr><td>Cartão de visita (impressão + digital)</td><td class="y"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.6"><path d="M20 6L9 17l-5-5"/></svg></td><td class="y"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.6"><path d="M20 6L9 17l-5-5"/></svg></td><td class="y"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.6"><path d="M20 6L9 17l-5-5"/></svg></td></tr>
-            <tr><td>Assinatura de e-mail</td><td class="y"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.6"><path d="M20 6L9 17l-5-5"/></svg></td><td class="y"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.6"><path d="M20 6L9 17l-5-5"/></svg></td><td class="y"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.6"><path d="M20 6L9 17l-5-5"/></svg></td></tr>
-            <tr><td>Brand Pack (todos os arquivos)</td><td class="y"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.6"><path d="M20 6L9 17l-5-5"/></svg></td><td class="y"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.6"><path d="M20 6L9 17l-5-5"/></svg></td><td class="y"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.6"><path d="M20 6L9 17l-5-5"/></svg></td></tr>
-            <tr><td>Papel timbrado e pasta A4</td><td class="n">·</td><td class="y"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.6"><path d="M20 6L9 17l-5-5"/></svg></td><td class="y"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.6"><path d="M20 6L9 17l-5-5"/></svg></td></tr>
-            <tr><td>Modelos de posts para Instagram</td><td class="n">·</td><td class="y"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.6"><path d="M20 6L9 17l-5-5"/></svg></td><td class="y"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.6"><path d="M20 6L9 17l-5-5"/></svg></td></tr>
-            <tr><td>Kit visual de Instagram</td><td class="n">·</td><td class="y"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.6"><path d="M20 6L9 17l-5-5"/></svg></td><td class="y"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.6"><path d="M20 6L9 17l-5-5"/></svg></td></tr>
-            <tr><td>Iconografia personalizada</td><td class="n">·</td><td class="y"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.6"><path d="M20 6L9 17l-5-5"/></svg></td><td>Estendida</td></tr>
-            <tr><td>Banco de imagens com IA</td><td class="n">·</td><td class="y"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.6"><path d="M20 6L9 17l-5-5"/></svg></td><td>Ampliado</td></tr>
-            <tr><td>Wallpapers e aplicações digitais</td><td class="n">·</td><td class="y"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.6"><path d="M20 6L9 17l-5-5"/></svg></td><td class="y"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.6"><path d="M20 6L9 17l-5-5"/></svg></td></tr>
-            <tr><td>Manual da marca</td><td>Guia rápido</td><td class="y"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.6"><path d="M20 6L9 17l-5-5"/></svg></td><td>Completo</td></tr>
-            <tr><td>Motion (logotipo animado)</td><td class="n">·</td><td class="n">·</td><td class="y"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.6"><path d="M20 6L9 17l-5-5"/></svg></td></tr>
-            <tr><td>Aplicação em 3D</td><td class="n">·</td><td class="n">·</td><td class="y"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.6"><path d="M20 6L9 17l-5-5"/></svg></td></tr>
-            <tr><td>Aplicações ampliadas</td><td class="n">·</td><td class="n">·</td><td class="y"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.6"><path d="M20 6L9 17l-5-5"/></svg></td></tr>
-            <tr><td>Apresentação institucional</td><td class="n">·</td><td class="n">·</td><td class="y"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.6"><path d="M20 6L9 17l-5-5"/></svg></td></tr>
-            <tr><td>Prazo</td><td>12 dias úteis</td><td>20 dias úteis</td><td>30 dias úteis</td></tr>
-          </tbody>
-        </table>
-      </div>
-    </details>
   </div>
 </section>
 
@@ -796,7 +811,7 @@ footer{background:var(--ink);border-top:1px solid var(--line);padding:56px 0 34p
   <div class="wrap">
     <div class="eyebrow rv"><span class="dot"></span>Eleve ainda mais</div>
     <h2 class="stitle display split" data-split>Complementos opcionais.</h2>
-    <p class="lead rv">Recursos que podem ser somados a qualquer plano, sempre dentro do que é adequado e sóbrio para a advocacia.</p>
+    <p class="lead rv">Recursos que podem ser somados ao seu plano, sempre dentro do que é adequado e sóbrio para a advocacia.</p>
     <div class="ex-grid">
       <div class="ex rv"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M12 3l7 3v6c0 4-3 7-7 8-4-1-7-4-7-8V6z"/><path d="M9 12l2 2 4-4"/></svg></div><h5>Registro de anterioridade</h5><p>Busca e registro que comprovam a originalidade da marca e ajudam a protegê-la.</p><span class="tag-price">R$ 50</span></div>
       <div class="ex rv"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M3 8h18M8 21h8"/></svg></div><h5>Página institucional</h5><p>Uma página funcional e sóbria para apresentar você, as áreas de atuação e os contatos.</p><span class="tag-soft">Sob consulta</span></div>
@@ -832,24 +847,12 @@ footer{background:var(--ink);border-top:1px solid var(--line);padding:56px 0 34p
     <div class="eyebrow rv"><span class="dot"></span>Formas de pagamento</div>
     <h2 class="stitle display split" data-split>Condições flexíveis para você.</h2>
     <p class="lead rv">Escolha a forma que fizer mais sentido. Nota fiscal disponível, se necessário.</p>
-    <div class="pay-grid">
-      <div class="pay rv"><div class="head"><div class="pn">Essencial</div><small>R$ 550</small></div>
+    <div class="pay-grid one">
+      <div class="pay rv"><div class="head"><div class="pn">Plano personalizado</div><small>R$ 650 · condição especial</small></div>
         <div class="rows">
-          <div class="r best"><div class="big">R$ 520</div><div class="lbl">À vista no PIX<br>R$ 30 de desconto</div></div>
-          <div class="r"><div class="big">2x R$ 275</div><div class="lbl">Entrada e<br>pós-aprovação</div></div>
-          <div class="r"><div class="big">4x R$ 137,50</div><div class="lbl">Cartão de crédito<br>sem juros</div></div>
-        </div><div class="methods">PIX · BOLETO · CARTÃO DE CRÉDITO</div></div>
-      <div class="pay rv"><div class="head"><div class="pn">Profissional</div><small>R$ 900</small></div>
-        <div class="rows">
-          <div class="r best"><div class="big">R$ 850</div><div class="lbl">À vista no PIX<br>R$ 50 de desconto</div></div>
-          <div class="r"><div class="big">2x R$ 450</div><div class="lbl">Entrada e<br>pós-aprovação</div></div>
-          <div class="r"><div class="big">4x R$ 225</div><div class="lbl">Cartão de crédito<br>sem juros</div></div>
-        </div><div class="methods">PIX · BOLETO · CARTÃO DE CRÉDITO</div></div>
-      <div class="pay rv"><div class="head"><div class="pn">Premium</div><small><s>De R$ 1.300</s> por <b style="color:var(--amber)">R$ 1.200</b></small></div>
-        <div class="rows">
-          <div class="r best"><div class="big">R$ 1.100</div><div class="lbl">À vista no PIX<br>R$ 100 de desconto</div></div>
-          <div class="r"><div class="big">2x R$ 600</div><div class="lbl">Entrada e<br>pós-aprovação</div></div>
-          <div class="r"><div class="big">4x R$ 300</div><div class="lbl">Cartão de crédito<br>sem juros</div></div>
+          <div class="r best"><div class="big">R$ 650</div><div class="lbl">À vista<br>no PIX</div></div>
+          <div class="r"><div class="big">2x R$ 325</div><div class="lbl">Entrada e<br>pós-aprovação</div></div>
+          <div class="r"><div class="big">4x R$ 162,50</div><div class="lbl">Cartão de crédito<br>sem juros</div></div>
         </div><div class="methods">PIX · BOLETO · CARTÃO DE CRÉDITO</div></div>
     </div>
     <p class="card-note rv"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg><span>Parcelamento no cartão de crédito em <b>até 4x sem juros</b>. Acima de 4x, as parcelas recebem o acréscimo das taxas da operadora do cartão. Consulte as condições antes de fechar.</span></p>
@@ -869,7 +872,7 @@ footer{background:var(--ink);border-top:1px solid var(--line);padding:56px 0 34p
       <div class="w rv"><div class="wk">Etapa 05</div><div class="nm">Entrega</div></div>
     </div>
     <div class="cond-grid">
-      <div class="cond rv"><div class="num">01</div><h5>Prazo</h5><p>De 12 a 30 dias úteis, conforme o plano, contados a partir da confirmação do pagamento. Pode se ajustar caso o envio de informações solicitadas atrase.</p></div>
+      <div class="cond rv"><div class="num">01</div><h5>Prazo</h5><p>20 dias úteis, contados a partir da confirmação do pagamento. Pode se ajustar caso o envio de informações solicitadas atrase.</p></div>
       <div class="cond rv"><div class="num">02</div><h5>Desenvolvimento</h5><p>Todo o projeto é construído a partir das informações do seu briefing, validadas por você a cada etapa.</p></div>
       <div class="cond rv"><div class="num">03</div><h5>Alterações</h5><p>Até três alterações de baixo impacto sem custo, desde que alinhadas às decisões tomadas durante o projeto.</p></div>
       <div class="cond rv"><div class="num">04</div><h5>Cancelamento</h5><p>Em caso de cancelamento durante a execução, é cobrado o valor correspondente ao trabalho já realizado.</p></div>
@@ -1013,25 +1016,7 @@ if(fine&&!reduce)document.querySelectorAll('.mag').forEach(b=>{
   b.addEventListener('mouseleave',()=>b.style.transform='');
 });
 
-// price toggle
-const pt=document.getElementById('paytoggle'),pill=pt.querySelector('.pill'),btns=[...pt.querySelectorAll('button')];
-function place(b){pill.style.left=b.offsetLeft+'px';pill.style.width=b.offsetWidth+'px'}
-function setMode(m){
-  btns.forEach(b=>{const on=b.dataset.mode===m;b.classList.toggle('on',on);b.setAttribute('aria-selected',on);if(on)place(b)});
-  document.querySelectorAll('.pk .val').forEach(v=>{
-    const to=v.dataset[m];
-    if(reduce){v.textContent=to;return}
-    v.animate([{opacity:1,transform:'translateY(0)'},{opacity:0,transform:'translateY(-10px)'}],{duration:180,easing:'ease-in'}).onfinish=()=>{
-      v.textContent=to;v.animate([{opacity:0,transform:'translateY(10px)'},{opacity:1,transform:'translateY(0)'}],{duration:320,easing:'cubic-bezier(.16,1,.3,1)'});
-    };
-  });
-  document.querySelectorAll('.pk .payline').forEach(p=>p.innerHTML=p.dataset[m]);
-}
-btns.forEach(b=>b.addEventListener('click',()=>setMode(b.dataset.mode)));
-const placeOn=()=>place(pt.querySelector('button.on'));
-addEventListener('resize',placeOn);
-if(document.fonts&&document.fonts.ready)document.fonts.ready.then(placeOn);
-placeOn();
+
 })();
 </script>
 </body>
